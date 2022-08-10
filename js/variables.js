@@ -32,3 +32,10 @@ function viewProduct() {
 		console.table(product);
 	});
 }
+function calculateCarrito() {
+	let total = products.reduce(
+		(acumulador, products) => acumulador + products.importe,
+		0
+	);
+	console.log("total a pagar:", total);
+}
