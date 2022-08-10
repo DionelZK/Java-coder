@@ -1,0 +1,40 @@
+header {
+	min-width: 100vw;
+	padding: 0, 5rem 0;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	box-shadow: none;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	.divNav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 0px 300px 0px 300px;
+		.nav {
+			list-style: none;
+			text-decoration: none;
+			.navItem {
+				margin: 0 0 0 1.5rem;
+				.navLinks {
+					font-size: 1.1rem;
+					color: #0e3554;
+					text-decoration: none;
+					transition: all 0.3s ease 0s;
+					&:hover {
+						color: #3f7cac;
+					}
+				}
+			}
+		}
+	}
+}
+.tittle {
+	text-align: center;
+	font-size: 2rem;
+	h1 {
+		font-weight: 500;
+	}
+}
