@@ -7,15 +7,15 @@
 }
 
 body {
-  background-color: #d3d0cb;
+  background-color: #191919;
 }
 
+/*-------------------> IMPORTS <-----------------  */ /*-------------------> IMPORTS <-----------------  */
+/*------------------> MIXINS  <--------------------*/
 header {
-  min-width: 100vw;
+  max-width: 100vw;
   padding: 0, 5rem 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;
   z-index: 1;
   box-shadow: none;
@@ -25,10 +25,12 @@ header {
 header .divNav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 0px 300px 0px 300px;
+  justify-content: center;
+  padding: 0px;
 }
 header .divNav .nav {
+  display: flex;
+  flex-direction: row;
   list-style: none;
   text-decoration: none;
 }
@@ -36,19 +38,230 @@ header .divNav .nav .navItem {
   margin: 0 0 0 1.5rem;
 }
 header .divNav .nav .navItem .navLinks {
-  font-size: 1.1rem;
-  color: #0e3554;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: white;
   text-decoration: none;
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 header .divNav .nav .navItem .navLinks:hover {
-  color: #3f7cac;
+  color: #17bebb;
 }
 
-.tittle {
-  text-align: center;
-  font-size: 2rem;
+/*-------------------> IMPORTS <-----------------  */ /*-------------------> IMPORTS <-----------------  */
+/*------------------> MIXINS  <--------------------*/
+.indexSection {
+  display: flex;
+  justify-content: center;
 }
-.tittle h1 {
-  font-weight: 500;
+.indexSection .indexDiv {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  height: 700px;
+}
+.indexSection .indexDiv .divimg .principalimg {
+  width: 100%;
+  height: auto;
+}
+.indexSection .indexDiv .imgtxt {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 16px;
+  max-height: 491px;
+  letter-spacing: 4px;
+}
+.indexSection .indexDiv .imgtxt .text {
+  margin-bottom: 5px;
+}
+
+/* -------------------> Animacion del btn <------------------------ */
+.btn {
+  width: 150px;
+  height: 40px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #e71d36;
+  border: 1px solid #e71d36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #191919;
+  border-radius: 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.btn:hover {
+  color: #e71d36;
+  cursor: pointer;
+}
+
+.btn::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  opacity: 0;
+  background-color: white;
+  content: "";
+  transition: 0.5s all ease 50ms;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  left: 0;
+  right: 0;
+  transition: 0.5s all ease-out 50ms;
+  z-index: -1;
+}
+
+/*-------------------> IMPORTS <-----------------  */
+/*------------------> MIXINS  <--------------------*/
+/*-------------------> IMPORTS <-----------------  */ /*-------------------> IMPORTS <-----------------  */
+/*------------------> MIXINS  <--------------------*/ /*--------------------> Contenido <----------------*/
+.productosTittle {
+  height: 100px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0 0 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.container .card {
+  display: flex;
+  width: 60%;
+  height: auto;
+  color: white;
+  flex-direction: column;
+}
+.container .card .productosimg {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.filter {
+  grid-area: 1/1/5/2;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+.filter .inputFilter {
+  display: flex;
+  width: 70%;
+  padding: 8px 8px;
+  margin: 8px 0px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  letter-spacing: 2px;
+}
+.filter .inputFilter:focus {
+  border: 3px solid #555;
+  outline: none;
+}
+
+.btnAddToCart {
+  width: 150px;
+  height: 40px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 5%;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btnAddToCart:hover {
+  box-shadow: 1px 1px 3px white;
+}
+
+/*-------------------> IMPORTS <-----------------  */
+/*------------------> MIXINS  <--------------------*/ /*----------------> Contenido <-------------------*/
+.sectionCarrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divTable {
+  display: table;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentTable {
+  border: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  max-width: 1000px;
+}
+.contentTable thead tr {
+  color: white;
+  text-align: unset;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+.contentTable thead tr th {
+  padding: 10px 10px;
+}
+.contentTable .tableBody {
+  color: white;
+  width: 20px;
+  height: 10px;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.imgCarrito {
+  width: 20%;
+  height: auto;
+}
+
+.btnDelete {
+  color: white;
+  background-color: #e71d36;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 70px;
+  height: 20px;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+.btnCarrito {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=stylesheets.css.map */

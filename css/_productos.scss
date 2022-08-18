@@ -1,0 +1,75 @@
+/*-------------------> IMPORTS <-----------------  */
+@import "variables";
+@import "mixins";
+/*--------------------> Contenido <----------------*/
+.productosTittle {
+	height: 100px;
+	color: $color-white;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin: 0 0 20px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	@include grids;
+	.card {
+		display: flex;
+		width: 60%;
+		height: auto;
+		color: $color-white;
+		flex-direction: column;
+		.productosimg {
+			display: flex;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+.filter {
+	grid-area: 1 / 1 / 5 / 2;
+	color: $color-white;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-left: 20px;
+	.inputFilter {
+		display: flex;
+		width: 70%;
+		padding: 8px 8px;
+		margin: 8px 0px;
+		text-transform: uppercase;
+		border-radius: 15px;
+		letter-spacing: 2px;
+		&:focus {
+			border: 3px solid #555;
+			outline: none;
+		}
+	}
+}
+
+.btnAddToCart {
+	// Font
+	width: 150px;
+	height: 40px;
+	margin-bottom: 10px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #ffff;
+	background-color: $color-black;
+	//FLEX
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $color-white;
+	border-radius: 5%;
+	position: relative;
+	cursor: pointer;
+	z-index: 1;
+}
+.btnAddToCart:hover {
+	box-shadow: 1px 1px 3px $color-white;
+}

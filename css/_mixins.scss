@@ -1,0 +1,22 @@
+/*-------------------> IMPORTS <-----------------  */
+@import "variables";
+
+/*------------------> MIXINS  <--------------------*/
+@mixin grids {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(auto, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+@mixin animation {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	right: 50%;
+	opacity: 0;
+	background-color: $color-white;
+	content: "";
+	transition: 0.5s all ease 50ms;
+}

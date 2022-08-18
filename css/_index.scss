@@ -1,0 +1,75 @@
+/*-------------------> IMPORTS <-----------------  */
+@import "variables";
+@import "mixins";
+.indexSection {
+	display: flex;
+	justify-content: center;
+	.indexDiv {
+		padding-top: 30px;
+		display: flex;
+		flex-direction: row;
+		width: 700px;
+		height: 700px;
+		.divimg {
+			.principalimg {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.imgtxt {
+			color: $color-white;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			font-size: 16px;
+			max-height: 491px;
+			letter-spacing: 4px;
+			.text {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+/* -------------------> Animacion del btn <------------------------ */
+.btn {
+	// Font
+	width: 150px;
+	height: 40px;
+	margin-bottom: 10px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #ffff;
+	background-color: $color-red;
+	border: 1px solid $color-red;
+	//FLEX
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $color-black;
+	border-radius: 5%;
+	position: relative;
+	z-index: 1;
+}
+.btn:hover {
+	color: $color-red;
+	cursor: pointer;
+}
+.btn::before {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	right: 50%;
+	opacity: 0;
+	background-color: $color-white;
+	content: "";
+	transition: 0.5s all ease 50ms;
+}
+.btn:hover::before {
+	opacity: 1;
+	left: 0;
+	right: 0;
+	transition: 0.5s all ease-out 50ms;
+	z-index: -1;
+}

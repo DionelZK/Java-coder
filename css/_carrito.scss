@@ -1,0 +1,61 @@
+//------->  imports <---------
+@import "mixins";
+@import "variables";
+/*----------------> Contenido <-------------------*/
+.sectionCarrito {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.divTable {
+	display: table;
+	justify-content: center;
+	align-items: center;
+}
+.contentTable {
+	border: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	max-width: 1000px;
+	thead {
+		tr {
+			color: $color-white;
+			text-align: unset;
+			font-weight: bold;
+			padding: 10px 10px;
+			th {
+				padding: 10px 10px;
+			}
+		}
+	}
+	.tableBody {
+		color: white;
+		width: 20px;
+		height: 10px;
+		padding: 12px 15px;
+		text-align: center;
+	}
+}
+
+.imgCarrito {
+	width: 20%;
+	height: auto;
+}
+.btnDelete {
+	color: $color-white;
+	background-color: $color-red;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	width: 70px;
+	height: 20px;
+	text-transform: uppercase;
+	border-radius: 20px;
+}
+.btnCarrito {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
