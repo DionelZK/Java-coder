@@ -4,7 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<script
+			src="https://kit.fontawesome.com/bdb91eed40.js"
+			crossorigin="anonymous"
+		></script>
 		<link rel="stylesheet" href="../css/stylesheets.css" />
 		<title>Carrito</title>
 	</head>
@@ -41,13 +44,18 @@
 							<th>Producto</th>
 							<th>Nombre</th>
 							<th>Importe</th>
+							<th></th>
+							<th>Cantidad</th>
 						</tr>
 					</thead>
-					<tbody id="table-body" class="tableBody"></tbody>
+					<tbody id="cart-container" class="tableBody"></tbody>
 				</table>
 			</div>
 			<div class="btnCarrito">
-				<button class="btnDelete" id="btn-delete">borrar</button>
+				<button class="btnDelete" id="empty-cart">borrar</button>
+				<p class="productPrice">
+					Precio total:$<span id="final-price">0</span>
+				</p>
 			</div>
 		</section>
 	</body>

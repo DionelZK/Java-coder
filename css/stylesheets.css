@@ -139,21 +139,21 @@ header .divNav .nav .navItem .navLinks:hover {
   justify-content: center;
 }
 
-.container {
+.productosSection {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(auto, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-.container .card {
+.productosSection .card {
   display: flex;
   width: 60%;
   height: auto;
   color: white;
   flex-direction: column;
 }
-.container .card .productosimg {
+.productosSection .card .productosimg {
   display: flex;
   height: 100%;
   width: 100%;
@@ -253,6 +253,7 @@ header .divNav .nav .navItem .navLinks:hover {
   border: 0;
   padding: 0;
   margin: 0;
+  margin-right: 100px;
   cursor: pointer;
   width: 70px;
   height: 20px;
@@ -264,4 +265,9 @@ header .divNav .nav .navItem .navLinks:hover {
   width: 100%;
   display: flex;
   justify-content: center;
+  color: white;
+}
+
+.trashCan {
+  cursor: pointer;
 }/*# sourceMappingURL=stylesheets.css.map */

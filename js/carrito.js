@@ -1,38 +1,37 @@
-const btnDelete = document.getElementById("btn-delete");
-let cartProducts = JSON.parse(localStorage.getItem("cartProducts") || "[]");
-const tableBody = document.querySelector("#table-body");
-console.log(localStorage.getItem("cartProducts"));
-function createEmptyCart() {
-	tableBody.innerHTML += `
-		<tr>
-		<th class="empty-cart">Tu carrito esta vacio</th>
-		</tr>`;
-}
-if (cartProducts.length === 0) {
-	createEmptyCart();
-} else {
-	loadProduct();
-}
-//           CARGAR PRODUCTO
-function loadProduct() {
-	tableBody.innerHTML = "";
-	cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
-	cartProducts.forEach((producto) => {
-		tableBody.innerHTML += `<tr>
-		<th><img class="imgCarrito" src=${producto.imagen} alt=""/></th>		
-		<th>${producto.description}</th>
-		<th>${producto.importe}</th>		
-        </tr>`;
-	});
-}
-//       BORRAR PRODUCTO
-function handleDelete() {
-	let deletedCart = [];
-	localStorage.setItem("cartProducts", JSON.stringify(deletedCart));
-	loadProduct();
-	createEmptyCart();
-}
+const emptyBtn = document.getElementById("empty-cart");
 
-btnDelete.addEventListener("click", () => {
-	handleDelete();
+const cartContainer = document.getElementById("cart-container");
+
+const finalPrice = document.getElementById("final-price");
+
+let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+const refreshCart = () => {
+	cart = JSON.parse(localStorage.getItem("cart") || "[]");
+	cartContainer.innerHTML = "";
+	cart.forEach((prod) => {
+		cartContainer.innerHTML += `
+		<tr>
+		<td><img src="${prod.img}" alt="${prod.name}" class="imgCarrito"/></td>
+		<td>${prod.name}</td>
+		<td>${prod.price}</td>
+		<td><a onclick="cartDelete(${prod.id})" class="delete-button"><i class="fa-solid fa-trash-can trashCan"></i></a></td>
+		<td><span id="quantity">1</span></td></tr>
+		`;
+	});
+	finalPrice.innerText = cart.reduce((acc, prod) => acc + prod.price, 0);
+};
+
+const cartDelete = (prodId) => {
+	const newCart = cart.filter((prod) => prod.id !== prodId);
+	console.log(newCart);
+	localStorage.setItem("cart", JSON.stringify(newCart));
+	refreshCart();
+};
+
+refreshCart();
+
+emptyBtn.addEventListener("click", () => {
+	localStorage.setItem("cart", JSON.stringify([]));
+	refreshCart();
 });
