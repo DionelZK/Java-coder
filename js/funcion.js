@@ -4,7 +4,33 @@ const finalPrice = document.getElementById("final-price");
 
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-stockProducts.forEach((product) => {
+const dataJSON = "/js/products.json";
+
+const cargarContenido = async () => {
+	const response = await fetch(dataJSON);
+	const data = await response.json();
+	data.forEach((product) => {
+		const div = document.createElement("div");
+		div.classList.add("card");
+		div.innerHTML = `
+						<img class="productosimg" src="${product.img}" alt=""/>
+					<h2>Pop</h2>
+					<p>${product.name}</p>
+					<span>${product.price}$</span>
+					<button class="btnAddToCart" id="add${product.id}">
+						Agregar al carrito
+					</button>
+	`;
+		productsContainer.appendChild(div);
+
+		const button = document.getElementById(`add${product.id}`);
+		button.addEventListener("click", () => {
+			addToCart(product.id);
+		});
+	});
+};
+cargarContenido();
+/* stockProducts.forEach((product) => {
 	const div = document.createElement("div");
 	div.classList.add("card");
 	div.innerHTML = `
@@ -22,10 +48,12 @@ stockProducts.forEach((product) => {
 	button.addEventListener("click", () => {
 		addToCart(product.id);
 	});
-});
+}); */
 
-const addToCart = (prodId) => {
-	const item = stockProducts.find((prod) => prod.id === prodId);
+const addToCart = async (prodId) => {
+	const response = await fetch(dataJSON);
+	const data = await response.json();
+	const item = data.find((prod) => prod.id === prodId);
 
 	const newItem = {
 		id: Date.now(),
