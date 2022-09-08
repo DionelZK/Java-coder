@@ -30,25 +30,6 @@ const cargarContenido = async () => {
 	});
 };
 cargarContenido();
-/* stockProducts.forEach((product) => {
-	const div = document.createElement("div");
-	div.classList.add("card");
-	div.innerHTML = `
-						<img class="productosimg" src="${product.img}" alt=""/>
-					<h2>Pop</h2>
-					<p>${product.name}</p>
-					<span>${product.price}$</span>
-					<button class="btnAddToCart" id="add${product.id}">
-						Agregar al carrito
-					</button>
-	`;
-	productsContainer.appendChild(div);
-
-	const button = document.getElementById(`add${product.id}`);
-	button.addEventListener("click", () => {
-		addToCart(product.id);
-	});
-}); */
 
 const addToCart = async (prodId) => {
 	const response = await fetch(dataJSON);
